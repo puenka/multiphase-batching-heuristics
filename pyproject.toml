@@ -1,0 +1,35 @@
+[project]
+name = "batchingheuristics"
+version = "0.1.0"
+authors = [
+{ name = "Alexander Grosz", email = "alexander.grosz@tum.de" },
+{ name = "Leander Schnaars", email = "leander.schnaars@tum.de" },
+]
+requires-python = ">=3.12"
+description = "Public code repository for research on batching heuristics for a warehouse picking problem."
+dependencies = [
+  "matplotlib",
+  "seaborn",
+  "ortools",
+  "numpy",
+  "scipy",
+  "gurobipy",
+  "loguru",
+  "typer",
+  "polars>=1.29.0",
+]
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core~=3.9"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+pythonpath = ["."]
+
+[dependency-groups]
+dev = [
+  "coverage>=7.16.0",
+  "pytest>=8.3.5",
+  "pytest-cov>=7.1.0",
+]

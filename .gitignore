@@ -1,0 +1,14 @@
+.idea/
+*.pyc
+*.json
+*.json.gz
+!bin/*example.json
+.coverage
+.DS_Store
+data/
+.ipynb_checkpoints/
+proof_of_concept/
+log/
+*.pdf
+.coverage*
+uv.lock
