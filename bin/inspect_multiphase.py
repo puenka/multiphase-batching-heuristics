@@ -563,31 +563,6 @@ class RunnerStatistics:
         sns.lineplot(dist_data, x="phase", y="dist", hue="type")
         plt.show()
 
-    # ------------- Function interfaces to methods defined in check_solution_properties.py
-
-    def show_item_heatmap(self, phase_index):
-        fig = batchingheuristics.inspection.check_solution_properties.show_item_heatmap(
-            self.runner_phases[phase_index]
-        )
-        fig.suptitle(f"Phase {phase_index}")
-        plt.show()
-
-    def show_distance_distribution(self, phase_index):
-        fig = batchingheuristics.inspection.check_solution_properties.show_distance_distributions(
-            self.runner_phases[phase_index]
-        )
-        fig.suptitle(f"Phase {phase_index}")
-        plt.show()
-
-    def test_order_distribution(self, phase_index):
-        all_orders = list(itertools.chain(*self.new_orders_per_phase[0:phase_index]))
-        completed_orders = list(
-            itertools.chain(*[p.batches for p in self.runner_phases[0:phase_index]])
-        )
-        batchingheuristics.inspection.check_solution_properties.test_order_distributions(
-            all_orders, completed_orders
-        )
-
 
 def main(
     results_file: pathlib.Path,
@@ -596,7 +571,6 @@ def main(
     plot_by_birth: bool = False,
     plot_dist: bool = False,
     plot_costs: bool = False,
-    plot_heatmap: bool = False,
 ):
     rs = RunnerStatistics.from_file(results_file)
 
@@ -623,10 +597,6 @@ def main(
 
     if all_plots or plot_costs:
         rs.plot_cost_stats()
-
-    if all_plots or plot_heatmap:
-        for p in phases:
-            rs.show_item_heatmap(p)
 
 
 if __name__ == "__main__":
