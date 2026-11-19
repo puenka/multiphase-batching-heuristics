@@ -1,10 +1,10 @@
 # Batching heuristics for warehouse picking
 
 This is the code repository for a follow-up paper on [Joint Order Selection, Allocation, Batching and Picking for Large Scale Warehouses](https://arxiv.org/abs/2401.04563).
-Their associated code served as the starting point for our experiments and (at the time of writing) can be found at [https://github.com/zalandoresearch/batching-benchmarks].
+Their associated code served as the starting point for our experiments and (at the time of writing) can be found at https://github.com/zalandoresearch/batching-benchmarks.
 This code repository essentially started as a fork of theirs, but has been significantly adjusted throughout the course of our work. We have kept baseline compatibility to the reference algorithms they provide.
 
-For a discussion on our improvements and associated results, find our paper at TODO.
+For a discussion on our improvements and associated results, find our paper [on arXiv](https://arxiv.org/abs/2611.24529).
 
 
 ## How to run these experiments
